@@ -1,0 +1,492 @@
+<!-- inputs 
+  <logo_url>https://tailwindui.com/img/logos/mark.svg</logo_url>
+  <business_name>Alva</business_name>
+  <business_description>Alva is an AI platform that helps knowledge-intensive companies create industry thought leadership content at scale. It is solving the problem of general-purpose LLMs being unable to produce complex, industry-specific content. A very simple landing page with great design</business_description>
+  <brand_voice>Bold, Friendly, Informative</brand_voice>
+  light, dark, cupcake, bumblebee, emerald, corporate, synthwave, retro, cyberpunk, valentine, halloween, garden, forest, aqua, lofi, pastel, fantasy, wireframe, black, luxury, dracula, cmyk, autumn, business, acid, lemonade, night, coffee, winter, 
+
+  -->
+<!DOCTYPE html>
+<html lang="en" data-theme="bumblebee">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alva - AI-Powered Thought Leadership Content Creation</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</html>
+<style>
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(var(--scroll-width, -100%));
+        }
+    }
+
+    @keyframes typing {
+
+        0%,
+        100% {
+            width: 0;
+        }
+
+        70%,
+        90% {
+            width: 100%;
+        }
+    }
+
+    @keyframes blink {
+        50% {
+            border-color: transparent;
+        }
+    }
+
+    .typing-effect-container {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .typing-effect {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 0.15em solid;
+        animation: typing 4s steps(30, end) infinite, blink 0.75s step-end infinite;
+    }
+
+    .feature-card {
+        transition: top 0.1s ease-out;
+    }
+</style>
+</head>
+
+<body>
+    <div class="w-screen bg-base-100">
+        <!-- Navbar -->
+        <header id="navbar" class="mx-4 bg-base-100">
+            <nav class="navbar max-w-7xl mx-auto flex items-center justify-between">
+                <div class="flex-1">
+                    <a href="#" class="btn btn-ghost normal-case text-xl">
+                        <span class="sr-only">Alva</span>
+                        <img class="h-8 w-auto" src="alva_logo.webp" alt="Alva Logo">
+                    </a>
+                </div>
+                <div class="hidden lg:flex items-center">
+                    <ul class="menu menu-horizontal px-1">
+                        <li><a href="#features" class="text-base-content">Features</a></li>
+                        <li><a href="#" class="text-base-content">Pricing</a></li>
+                        <li><a href="#about" class="text-base-content">About</a></li>
+                    </ul>
+                </div>
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                </div>
+                <div class="flex-none lg:hidden">
+                    <label for="my-drawer" class="btn btn-square btn-ghost">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            class="inline-block w-5 h-5 stroke-current">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </label>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Mobile menu drawer -->
+        <div class="drawer drawer-end">
+            <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+            <div class="drawer-side z-[1000]">
+                <label for="my-drawer" class="drawer-overlay"></label>
+                <ul class="menu p-4 w-80 h-full bg-base-100 text-base-content">
+                    <li><label for="my-drawer" class="drawer-button"><a href="#features">Features</a></label></li>
+                    <li><label for="my-drawer" class="drawer-button"><a href="#">Pricing</a></label></li>
+                    <li><label for="my-drawer" class="drawer-button"><a href="#about">About</a></label></li>
+                    <li><label for="my-drawer" class="drawer-button"><a href="#contact" class="btn btn-primary mt-4">Get
+                                Started</a></label></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <div id="hero" class="hero min-h-screen bg-base-100">
+            <div class="hero-content w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row items-center justify-between w-full">
+                    <div class="lg:w-2/3 mb-8 lg:mb-0">
+                        <h1 class="mb-5 text-5xl lg:text-7xl font-bold text-base-content">
+                            Transform Your Insights to Thought Leadership</h1>
+                        <p class="mb-5 text-lg text-base-content">Alva: The AI platform that
+                            empowers knowledge-intensive companies to create complex, industry-specific content at
+                            scale.</p>
+                    </div>
+                    <div class="lg:w-1/3 flex justify-center lg:justify-end relative">
+                        <a href="#contact"><button class="btn btn-primary btn-lg z-10 rounded-xl">
+                                <span class="typing-effect-container"><span>Start</span><span>&nbsp;</span><span
+                                        class="typing-effect">Creating Content</span></span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Features Section -->
+        <div id="features" class="relative">
+            <div class="h-screen sticky top-0 overflow-hidden">
+                <!-- Feature 1 -->
+                <div
+                    class="feature-card absolute inset-0 bg-base-100 p-8 transition-all duration-300 ease-out border-t border-b border-base-300">
+                    <div class="flex flex-col lg:flex-row items-center h-full">
+                        <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-8">
+                            <h3 class="text-4xl font-bold mb-4 text-base-content brightness-150 contrast-150">Industry
+                                Expertise</h3>
+                            <p class="text-xl text-base-content">Generate content tailored to your specific industry
+                                knowledge and trends. Our AI understands the nuances of your field, ensuring that every
+                                piece of content is not just accurate, but also adds value to your industry
+                                conversations.</p>
+                        </div>
+                        <div class="lg:w-1/2 flex justify-center items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"
+                                class="relative text-primary w-48 h-48">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div
+                    class="feature-card absolute inset-0 bg-base-100 p-8 transition-all duration-300 ease-out border-t border-b border-base-300">
+                    <div class="flex flex-col lg:flex-row items-center h-full">
+                        <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-8">
+                            <h3 class="text-4xl font-bold mb-4 text-base-content brightness-150 contrast-150">Scale Your
+                                Content</h3>
+                            <p class="text-xl text-base-content">Produce large volumes of high-quality content
+                                efficiently and consistently. With Alva, you can meet the demands of today's fast-paced
+                                digital landscape without compromising on quality or depth of insight.</p>
+                        </div>
+                        <div class="lg:w-1/2 flex justify-center items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"
+                                class="text-error w-48 h-48">
+                                <polyline points="17 11 12 6 7 11"></polyline>
+                                <polyline points="17 18 12 13 7 18"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div
+                    class="feature-card absolute inset-0 bg-base-100 p-8 transition-all duration-300 ease-out border-t border-b border-base-300">
+                    <div class="flex flex-col lg:flex-row items-center h-full">
+                        <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-8">
+                            <h3 class="text-4xl font-bold mb-4 text-base-content brightness-150 contrast-150">
+                                Customization</h3>
+                            <p class="text-xl text-base-content">Adapt the AI to your company's unique voice and
+                                expertise. Alva learns from your existing content and style guides to ensure that every
+                                piece of generated content feels authentically yours.</p>
+                        </div>
+                        <div class="lg:w-1/2 flex justify-center items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"
+                                class="text-info w-48 h-48">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div
+                    class="feature-card absolute inset-0 bg-base-100 p-8 transition-all duration-300 ease-out border-t border-b border-base-300">
+                    <div class="flex flex-col lg:flex-row items-center h-full">
+                        <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-8">
+                            <h3 class="text-4xl font-bold mb-4 text-base-content brightness-150 contrast-150">
+                                Time-Saving</h3>
+                            <p class="text-xl text-base-content">Reduce content creation time while maintaining quality
+                                and relevance. Free up your team to focus on strategy and high-level tasks while Alva
+                                handles the heavy lifting of content production.</p>
+                        </div>
+                        <div class="lg:w-1/2 flex justify-center items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"
+                                class="w-48 h-48 text-success">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="h-[300vh]"></div> <!-- Spacer to ensure correct scrolling for all features -->
+        </div>
+
+
+        <!-- Testimonials -->
+        <div id="testimonials" class="bg-neutral-900 py-32 sm:-mx-6 lg:-mx-8 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-neutral-content brightness-100 text-4xl font-bold text-center mb-20">What Our
+                    Clients
+                    Say</h2>
+                <div class="relative w-full overflow-hidden">
+                    <div class="flex animate-[scroll_40s_linear_infinite] hover:[animation-play-state:paused]"
+                        style="--scroll-width: -100%;">
+                        <div class="flex-none w-[300px] mr-5 px-4">
+                            <div
+                                class="card bg-neutral-800 shadow-xl h-full flex flex-col border border-neutral-content-100">
+                                <div class="card-body flex flex-col justify-between">
+                                    <div>
+                                        <p class="text-lg text-neutral-content">"Alva has
+                                            revolutionized our content strategy.
+                                            We're now producing in-depth industry analyses that truly showcase our
+                                            expertise."</p>
+                                    </div>
+                                    <div class="mt-4">
+                                        <p class="font-bold text-neutral-content">Sarah Johnson
+                                        </p>
+                                        <p class="text-sm text-neutral-content">Chief Content
+                                            Officer at TechInsights</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-none w-[300px] mr-5 px-4">
+                            <div
+                                class="card bg-neutral-800 shadow-xl h-full flex flex-col border border-neutral-content-100">
+                                <div class="card-body flex flex-col justify-between">
+                                    <div>
+                                        <p class="text-lg text-neutral-content">"The level of
+                                            industry specific content Alva
+                                            produces is impressive. It's like having a team of expert writers at our
+                                            fingertips."</p>
+                                    </div>
+                                    <div class="mt-4">
+                                        <p class="font-bold text-neutral-content">Michael Lee</p>
+                                        <p class="text-sm text-neutral-content">Director of
+                                            Marketing at FinTech Solutions</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-none w-[300px] mr-5 px-4">
+                            <div
+                                class="card bg-neutral-800 shadow-xl h-full flex flex-col border border-neutral-content-100">
+                                <div class="card-body flex flex-col justify-between">
+                                    <div>
+                                        <p class="text-lg text-neutral-content">"Alva has helped
+                                            us maintain our position as
+                                            thought leaders in our industry. The content it generates is
+                                            consistently
+                                            high-quality and relevant."</p>
+                                    </div>
+                                    <div class="mt-4">
+                                        <p class="font-bold text-neutral-content">Emily Chen</p>
+                                        <p class="text-sm text-neutral-content">CEO of HealthTech
+                                            Innovations</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Intro -->
+        <div class="hero mt-20">
+            <div class="hero-content text-center">
+                <div class="max-w-md">
+                    <h2 class="text-4xl font-bold text-base-content contrast-150 brightness-150">Ready to Elevate
+                        Your
+                        Thought Leadership?</h2>
+                    <p class="py-6 text-base-content">Join the AI revolution in content creation. Let Alva help you
+                        produce complex, industry specific content that sets you apart from the competition.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Contact Form -->
+        <div id="contact"
+            class="card w-full bg-base-100 border border-base-400 max-w-md mx-auto mb-20 appear-transition">
+            <div class="card-body">
+                <h2
+                    class="card-title text-2xl font-bold mb-6 justify-center text-base-content brightness-150 contrast-150">
+                    Contact Us</h2>
+                <form id="contactForm" class="form-control w-full max-w-xs mx-auto">
+                    <label class="label" for="name">
+                        <span class="label-text">Name</span>
+                    </label>
+                    <input type="text" id="name" name="name" required
+                        class="input input-bordered border-base-content w-full" />
+
+                    <label class="label" for="email">
+                        <span class="label-text">Email</span>
+                    </label>
+                    <input type="email" id="email" name="email" required
+                        class="input input-bordered border-base-content w-full" />
+
+                    <label class="label" for="message">
+                        <span class="label-text">Message</span>
+                    </label>
+                    <textarea id="message" name="message" required
+                        class="textarea textarea-bordered border-base-content h-24 w-full"></textarea>
+
+                    <button type="submit" class="btn btn-primary mt-4 w-full">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div id="about" class="bg-base-200 py-16">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-8 text-base-content brightness-150 contrast-150">About
+                    Our
+                    Founder</h2>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                    <div class="w-48 h-48 rounded-full overflow-hidden">
+                        <img src="founder.jpeg" alt="Outi Maria Pietilänaho" class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-2/3 text-center md:text-left">
+                        <h3 class="text-2xl font-semibold mb-2 text-base-content brightness-150 contrast-150">Outi
+                            Maria
+                            Pietilänaho</h3>
+                        <p class="text-base-content mb-4">3X founder | Industry Leader | Forbes featured | Techstars
+                            '22
+                        </p>
+                        <p class="text-base-content">With a track record of success in tech entrepreneurship, Outi
+                            brings her expertise from founding Vimma, an app for content creators, and Fragrance By
+                            Me,
+                            a D2C e-commerce platform. Her innovative approach and deep industry knowledge drive
+                            Alva's
+                            mission to revolutionize thought leadership content creation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer p-10 bg-neutral-900 text-neutral-content">
+            <div>
+                <a href="#" class="btn btn-ghost normal-case text-xl">
+                    <span class="sr-only">Alva</span>
+                    <img class="h-8 w-auto" src="alva_logo.webp" alt="Alva Logo">
+                </a>
+                <p>Alva AI Ltd.<br>Transforming Industry Insights Since 2024</p>
+            </div>
+            <div>
+                <span class="footer-title">Services</span>
+                <a class="link link-hover">Content Creation</a>
+                <a class="link link-hover">Industry Analysis</a>
+                <a class="link link-hover">Thought Leadership</a>
+                <a class="link link-hover">AI Consultation</a>
+            </div>
+            <div>
+                <span class="footer-title">Company</span>
+                <a class="link link-hover">About us</a>
+                <a class="link link-hover">Contact</a>
+                <a class="link link-hover">Jobs</a>
+                <a class="link link-hover">Press kit</a>
+            </div>
+            <div>
+                <span class="footer-title">Legal</span>
+                <a class="link link-hover">Terms of use</a>
+                <a class="link link-hover">Privacy policy</a>
+                <a class="link link-hover">Cookie policy</a>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const video = document.getElementById('hero-video');
+            if (video) {
+                video.play().catch(error => {
+                    console.error("Auto-play was prevented:", error);
+                    // You might want to show a play button here if autoplay fails
+                });
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove('opacity-0', 'translate-y-4');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('[transition-ease]').forEach((element) => {
+                observer.observe(element);
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const testimonialScroll = document.querySelector('.animate-\\[scroll_40s_linear_infinite\\]');
+            const originalContent = testimonialScroll.innerHTML;
+            testimonialScroll.innerHTML += originalContent;
+
+            // Calculate the correct scroll width
+            const scrollWidth = -testimonialScroll.scrollWidth / 2;
+            testimonialScroll.style.setProperty('--scroll-width', `${scrollWidth}px`);
+        });
+    </script>
+    <!-- Features appear on scroll script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const featuresSection = document.getElementById('features');
+            const featureCards = featuresSection.querySelectorAll('.feature-card');
+            const totalFeatures = featureCards.length;
+            const heroSection = document.getElementById('hero');
+
+            function updateFeaturePositions() {
+                const featuresRect = featuresSection.getBoundingClientRect();
+                const heroRect = heroSection.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+
+                // Calculate scroll progress
+                const scrollProgress = Math.max(0, Math.min(1, -heroRect.bottom / (featuresRect.height - viewportHeight)));
+
+                featureCards.forEach((card, index) => {
+                    // Calculate the ideal position for each card
+                    const idealPosition = index * viewportHeight - scrollProgress * (totalFeatures - 1) * viewportHeight;
+
+                    // Apply some parallax effect
+                    const parallaxFactor = 1 - (index / totalFeatures) * 0.5; // Cards higher up move slower
+                    const actualPosition = idealPosition * parallaxFactor;
+
+                    // Set the position
+                    card.style.top = `${actualPosition}px`;
+
+                    // Adjust opacity for fade effect
+                    const opacity = Math.max(0, Math.min(1, 1 - Math.abs(actualPosition) / (viewportHeight / 2)));
+                    card.style.opacity = opacity;
+                });
+            }
+
+            window.addEventListener('scroll', updateFeaturePositions);
+            window.addEventListener('resize', updateFeaturePositions);
+            updateFeaturePositions(); // Initial call to set the correct state on page load
+        });
+    </script>
+</body>
+
+</html>
